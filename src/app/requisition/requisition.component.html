@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="requisitionOuterContainer">
+  <div class="req-navbar-group">
+    <button type="button" class="btn btn-outline-primary btn-margin">Create New Req.</button>
+    <button type="button" class="btn btn-outline-primary btn-margin">Submit Req. Draft</button>
+    <button type="button" class="btn btn-outline-primary btn-margin">Submit Req. Approval</button>
+  </div>
+  <div class="req-table-container">
+    <div class="table-info-container">
+      <div class="row">
+          <div class="col-sm-8">
+              Requestion Table
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-outline-primary btn-margin" (click)="showModal =!showModal">Add new</button>
+            </div>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th *ngFor="let reqHeader of reqHeaders">{{reqHeader}}</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+    <div class="modal-custom" *ngIf="showModal">
+      <div class="req-form-container">
+          <form #reqAdd="ngForm" (ngSubmit)="login(reqAdd.value)">
+              <div class="title text-center">
+                  <h2>Add Requisition</h2>
+              </div>
+  
+                <div class="form-group">
+                  <label for="ItemCode">Item Code</label>
+                  <input type="text" name="ItemCode" class="form-control form-control-lg required" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ngModel>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" name="password" class="form-control form-control-lg" required id="exampleInputPassword1" placeholder="Password" ngModel>
+                </div>
+                <div class="form-group custom-group">
+                    <input type="submit" value="Submit" [disabled]="!reqAdd.valid" class="btn btn-primary btn-block"/>
+                </div>
+              </form>
+      </div>
+    </div>
+</div>  

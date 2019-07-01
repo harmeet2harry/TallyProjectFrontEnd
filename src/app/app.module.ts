@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RequisitionComponent } from './requisition/requisition.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterComponent } from './register/register.component';
     NavbarComponent,
     AboutusComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RequisitionComponent
   ],
   imports: [
     BrowserModule,

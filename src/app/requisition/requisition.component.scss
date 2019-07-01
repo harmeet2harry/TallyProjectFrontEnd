@@ -1,0 +1,25 @@
+.requisitionOuterContainer {
+    padding: 2rem 3.6rem;
+    .req-navbar-group {
+        padding: 1rem 2rem;
+        .btn-margin {
+            margin: 0 1rem;
+        }
+    }
+    .req-table-container {
+        padding: 1rem 2rem;
+        width: 80vw;
+        min-height: 40vh;
+        overflow: scroll;
+        .table-info-container{
+            padding: 1rem 0;
+        }
+    }
+
+    .req-modal {
+        width: 50%;
+        .req-form-container {
+            width: 80%;
+        }
+    }
+}
