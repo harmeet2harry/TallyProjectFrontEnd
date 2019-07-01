@@ -1,0 +1,40 @@
+<div class="registerOuterContainer">
+  <div class="register-card">
+    <div class="register-form">
+        <form #registerlogin="ngForm" (ngSubmit)="register(registerlogin.value)">
+          <div class="title text-center">
+              <h2>Please Register</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <label for="first name">First name</label>
+              <input type="text" name="firstname" class="form-control form-control-lg required" id="firstname" placeholder="Enter firtname" ngModel>
+            </div>
+            <div class="col-lg-6">
+              <label for="last name">Last name</label>
+              <input type="text" name="lastname" class="form-control form-control-lg required" id="lastname" placeholder="Enter last name" ngModel>
+            </div>
+          </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" name="email" class="form-control form-control-lg required" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password1" class="form-control form-control-lg" required id="exampleInputPassword1" placeholder="Password" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword2">Repeat Password</label>
+              <input type="password" name="password2" class="form-control form-control-lg" required id="exampleInputPassword2" placeholder="Password" ngModel>
+            </div>
+            <div class="form-group custom-group">
+                <input type="submit" value="Submit" [disabled]="!registerlogin.valid" class="btn btn-primary btn-block"/>
+            </div>
+          </form>
+
+    </div>
+
+</div>
+
+

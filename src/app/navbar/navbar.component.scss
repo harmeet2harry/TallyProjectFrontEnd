@@ -1,0 +1,50 @@
+@import "../../assets/styles/variables";
+.navbar-container{
+  display: flex;
+  justify-content: flex-end;
+  background-color: $theme1;
+  margin: 0;
+  padding: 20px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      display: inline;
+      padding: 0 10px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+        color:$grey2!important;
+      }
+
+    }
+
+    .dropdown {
+      display: inline-block;
+      .dropbtn {
+        cursor: pointer;
+        border: none;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        a{
+          display: block;
+          padding: .5rem 1rem;
+        }
+      }
+    }
+
+    .dropdown:hover {
+      .dropdown-content {display: block;}
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "../assets/styles/_variables.scss";
+@import '~ngx-toastr/toastr';
+
+@font-face {
+    font-family: "poppinsregular";
+    src: url("../assets/fonts/Poppins-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppinssemibold";
+    src: url("../assets/fonts/Poppins-Bold.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppinsmedium";
+    src: url("../assets/fonts/Poppins-Medium.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "poppinsextrabold";
+  src: url("../assets/fonts/Poppins-ExtraBold.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+    font-family: "poppinsregular";
+    font-size: 13px;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background: #29332f;
+    margin: 0;
+    padding: 0;
+}
+
+.popMdium {
+  font-family: $font-medium;
+  font-size: 20px;
+}
+
+.popBold {
+  font-family: $font-extraBold;
+  font-size: 20px;
+}
