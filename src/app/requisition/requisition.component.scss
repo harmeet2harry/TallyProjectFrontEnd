@@ -15,11 +15,12 @@
             padding: 1rem 0;
         }
     }
-
-    .req-modal {
-        width: 50%;
-        .req-form-container {
-            width: 80%;
+    .req-form-outerContainer{
+        width: 50vw;
+        .reqFormContainer {
+            width: 50%;
+            margin: 0 auto;
         }
     }
+   
 }

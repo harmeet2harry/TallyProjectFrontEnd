@@ -8,12 +8,12 @@
   <div class="req-table-container">
     <div class="table-info-container">
       <div class="row">
-          <div class="col-sm-8">
-              Requestion Table
-            </div>
-            <div class="col-sm-2">
-                <button type="button" class="btn btn-outline-primary btn-margin" (click)="showModal =!showModal">Add new</button>
-            </div>
+        <div class="col-sm-8">
+          Requestion Table
+        </div>
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-outline-primary btn-margin" (click)="toggleModal()">Add new</button>
+        </div>
       </div>
     </div>
     <table class="table table-bordered">
@@ -27,25 +27,125 @@
       </tbody>
     </table>
   </div>
-    <div class="modal-custom" *ngIf="showModal">
-      <div class="req-form-container">
-          <form #reqAdd="ngForm" (ngSubmit)="login(reqAdd.value)">
-              <div class="title text-center">
-                  <h2>Add Requisition</h2>
-              </div>
-  
-                <div class="form-group">
-                  <label for="ItemCode">Item Code</label>
-                  <input type="text" name="ItemCode" class="form-control form-control-lg required" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ngModel>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="password" class="form-control form-control-lg" required id="exampleInputPassword1" placeholder="Password" ngModel>
-                </div>
-                <div class="form-group custom-group">
-                    <input type="submit" value="Submit" [disabled]="!reqAdd.valid" class="btn btn-primary btn-block"/>
-                </div>
-              </form>
-      </div>
+  <!-- <div class="req-modal" *ngIf="showModal">
+    <div class="modal-background"></div>
+    <div class="req-form-container">
+      <form #reqAdd="ngForm" (ngSubmit)="login(reqAdd.value)">
+        <div class="title text-center">
+          <h2>Add Requisition</h2>
+        </div>
+
+        <div class="form-group">
+          <label for="ItemCode">Item Code</label>
+          <input type="text" name="ItemCode" class="form-control form-control-lg required" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control form-control-lg" required id="exampleInputPassword1" placeholder="Password"
+            ngModel>
+        </div>
+        <div class="form-group custom-group">
+          <input type="submit" value="Submit" [disabled]="!reqAdd.valid" class="btn btn-primary btn-block" />
+        </div>
+      </form>
     </div>
-</div>  
+  </div> -->
+
+  <app-modal [show]="showModal" [customClass]="req-form-outerContainer" [closeCallback]="toggleModal">
+    <div class="reqFormContainer">
+      <form #reqAdd="ngForm" (ngSubmit)="login(reqAdd.value)">
+        <div class="title text-center">
+          <h2>Add Requisition</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="ItemCode">Item Code</label>
+              <div>
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="ItemDescription">Item Description</label>
+              <input type="text" name="ItemDescription" class="form-control form-control-lg required" id="itemCode" aria-describedby="emailHelp"
+                placeholder="" ngModel readonly="true">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Material Group</label>
+              <input type="text" name="MaterialGroup" class="form-control form-control-lg" required id="MaterialGroup" placeholder="" ngModel>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="ItemCode">Store Id</label>
+              <div>
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="form-group">
+              <label for="StoreLocation">Store Location</label>
+              <input type="text" name="StoreLocation" class="form-control form-control-lg required" id="StoreLocation" aria-describedby="emailHelp"
+                placeholder="" ngModel readonly="true">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+              <div class="form-group">
+                  <label for="StoreLocation">Quantity</label>
+                  <input type="text" name="Quantity" class="form-control form-control-lg required" id="StoreLocation" aria-describedby="emailHelp"
+                    placeholder="" ngModel>
+                </div>
+          </div>
+          <div class="col-lg-4">
+              <label for="ItemCode">Measure</label>
+              <div>
+                <select>
+                  <option value="1">Kg</option>
+                  <option value="2">Dozen</option>
+                </select>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="ItemCode">Requestion Creation Date</label>
+                    <input type="date" name="reqCreationDate" placeholder="">
+                </div>
+                
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="ItemCode">Requestion Creation Date Text</label>
+                    <input type="text" name="reqCreationDateText" placeholder="">
+                </div>
+                
+            </div>
+          </div>
+
+        <div class="form-group custom-group">
+          <input type="submit" value="Submit" [disabled]="!reqAdd.valid" class="btn btn-primary btn-block" />
+        </div>
+      </form>
+    </div>
+
+
+  </app-modal>
+</div>

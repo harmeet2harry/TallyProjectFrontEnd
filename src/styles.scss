@@ -25,24 +25,44 @@ body {
   font-size: 1.4rem;
 }
 
-.modal-custom {
-  position: fixed;
-
-    /* center */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    /* ensure in front of rest of page -- increase as needed */
-    z-index: 1001;
-
-    /* visual illusion of being in front -- alter to taste */
-    box-shadow: rgba(0,0,0,0.4) 10px 10px 4px;
-
-    /* visual illusion of being a solid object -- alter to taste */
-    background-color: $grey1;
-    border: 1px solid $grey2;
-
-    /* visual preference of don't crowd the contents -- alter to taste */
-    padding: 10px;
+modal {
+  /* modals are hidden by default */
+  display: none;
+  .modal {
+      /* modal container fixed across whole screen */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /* z-index must be higher than .modal-background */
+      z-index: 1000;
+      
+      /* enables scrolling for tall modals */
+      overflow: auto;
+      .modal-body {
+          padding: 20px;
+          background: #fff;
+          /* margin exposes part of the modal background */
+          margin: 40px;
+      }
+  }
+  .modal-background {
+      /* modal background fixed across whole screen */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /* semi-transparent black  */
+      background-color: #000;
+      opacity: 0.75;
+      
+      /* z-index must be below .modal and above everything else  */
+      z-index: 900;
+  }
+}
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
 }

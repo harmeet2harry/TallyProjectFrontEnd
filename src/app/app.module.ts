@@ -16,6 +16,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RequisitionComponent } from './requisition/requisition.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RequisitionComponent } from './requisition/requisition.component';
     AboutusComponent,
     LoginComponent,
     RegisterComponent,
-    RequisitionComponent
+    RequisitionComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
